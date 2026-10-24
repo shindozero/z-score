@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@shindozero 震度0 - 地震Zスコア分析</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 20px; background: #f8f9fa; color: #333; }
+        .container { max-width: 850px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { font-size: 1.4rem; color: #111; margin-top: 0; }
+        .info-box { background: #f1f3f5; padding: 15px; border-radius: 6px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
+        th, td { border: 1px solid #dee2e6; padding: 10px 12px; text-align: left; }
+        th { background: #e9ecef; }
+        .color-box { display: inline-block; width: 18px; height: 18px; vertical-align: middle; margin-right: 8px; border: 1px solid #adb5bd; border-radius: 3px; }
+        .btn-container { text-align: center; margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.15); transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.85; }
+        .btn-map { background: #2f3542; color: #fff; }
+        .btn-yt { background: #ff0000; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 震度0 週間地震 Zスコア分析マップ</h1>
+        
+        <div class="info-box">
+            <div><strong>■ ベース期間：</strong> 直近4週間（約1ヶ月）</div>
+            <div><strong>■ テスト期間：</strong> 直近1週間</div>
+            <div><strong>■ メッシュサイズ：</strong> 緯度0.1度 × 経度0.1度（約11km × 9km の区間）</div>
+        </div>
+
+        <h2>🎨 メッシュのカラー凡例</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 80px;">色</th>
+                    <th style="width: 100px;">状態</th>
+                    <th>意味・解説</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="color-box" style="background-color: #ff4d4d;"></span>赤</td>
+                    <td><strong>激増</strong></td>
+                    <td>平常時と比べて地震活動が非常に活発化しているエリア</td>
+                </tr>
+                <tr>
+                    <td><span class="color-box" style="background-color: #ffa500;"></span>橙</td>
+                    <td><strong>増加</strong></td>
+                    <td>平常時より地震が増えているエリア</td>
+                </tr>
+                <tr>
+                    <td><span class="color-box" style="background-color: #ffd700;"></span>黄</td>
+                    <td><strong>微増</strong></td>
+                    <td>やや地震が増えている傾向にあるエリア</td>
+                </tr>
+                <tr>
+                    <td><span class="color-box" style="background-color: #ffffff;"></span>白</td>
+                    <td><strong>同等</strong></td>
+                    <td>平常時と同等の活動レベル</td>
+                </tr>
+                <tr>
+                    <td><span class="color-box" style="background-color: #87ceeb;"></span>水色</td>
+                    <td><strong>微減</strong></td>
+                    <td>やや地震が減っている傾向にあるエリア</td>
+                </tr>
+                <tr>
+                    <td><span class="color-box" style="background-color: #4169e1;"></span>青</td>
+                    <td><strong>減少</strong></td>
+                    <td>平常時より地震が減少しているエリア</td>
+                </tr>
+                <tr>
+                    <td><span class="color-box" style="background-color: #000080;"></span>紺</td>
+                    <td><strong>激減</strong></td>
+                    <td>地震活動が非常に不活発なエリア</td>
+                </tr>
+                <tr>
+                    <td><span class="color-box" style="background-color: #800080;"></span>紫</td>
+                    <td><strong>新規</strong></td>
+                    <td>ベース期間に地震が起きていないのに、テスト期間に地震が起きたエリア</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="btn-container">
+            <a href="https://www.youtube.com/@shindozero" class="btn btn-yt" target="_blank" rel="noopener">▶️ YouTube チャンネル「震度0」を見る</a>
+        </div>
+    </div>
+</body>
+</html>
